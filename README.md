@@ -47,29 +47,104 @@
 현재 `src` 기준:
 
 ```text
-src
-├─ components
-│  ├─ Nav.tsx
-│  └─ Sidebar.tsx
-├─ routes
-│  ├─ AboutPage.tsx
-│  ├─ ResumePage.tsx
-│  ├─ PortfolioPage.tsx
-│  ├─ BlogPage.tsx
-│  ├─ ContactPage.tsx
-│  └─ TemplatePage.tsx
-├─ template
-│  ├─ main.html
-│  └─ sections.ts
-├─ styles
-│  └─ original.css
-├─ data
-│  ├─ profile.ts
-│  ├─ experience.ts
-│  ├─ projects.ts
-│  └─ skills.ts
-├─ App.tsx
-└─ main.tsx
+portfolio/
+├─ docs/
+│  ├─ portfolio-plan.md
+│  └─ react-migration-report.md
+│
+├─ public/
+│  ├─ favicon.ico
+│  └─ assets/                 # 정적 파일(그대로 서빙)
+│
+├─ src/
+│  ├─ app/
+│  │  ├─ App.tsx              # 라우터/레이아웃 조립
+│  │  ├─ routes.tsx           # 라우팅 테이블(한 곳에서 관리)
+│  │  └─ providers.tsx        # (선택) 테마/쿼리클라이언트 등
+│  │
+│  ├─ pages/                  # 라우트 단위 페이지
+│  │  ├─ About/
+│  │  │  ├─ AboutPage.tsx
+│  │  │  └─ index.ts
+│  │  ├─ Portfolio/
+│  │  │  ├─ PortfolioPage.tsx
+│  │  │  ├─ components/       # 페이지 전용 컴포넌트
+│  │  │  └─ index.ts
+│  │  ├─ Resume/
+│  │  │  ├─ ResumePage.tsx
+│  │  │  └─ index.ts
+│  │  ├─ Blog/
+│  │  │  ├─ BlogPage.tsx
+│  │  │  └─ index.ts
+│  │  ├─ Contact/
+│  │  │  ├─ ContactPage.tsx
+│  │  │  └─ index.ts
+│  │  └─ Template/
+│  │     ├─ TemplatePage.tsx
+│  │     └─ index.ts
+│  │
+│  ├─ components/             # 전역 공용 컴포넌트
+│  │  ├─ layout/
+│  │  │  ├─ Shell.tsx         # (Header/Sidebar/Footer 포함)
+│  │  │  ├─ Nav.tsx
+│  │  │  └─ Sidebar.tsx
+│  │  ├─ ui/                  # 버튼/뱃지/모달 등(재사용)
+│  │  └─ index.ts
+│  │
+│  ├─ features/               # “도메인 단위” 묶음(포폴에 특히 좋음)
+│  │  ├─ profile/
+│  │  │  ├─ profile.model.ts
+│  │  │  ├─ profile.data.ts
+│  │  │  └─ profile.view.tsx
+│  │  ├─ projects/
+│  │  │  ├─ projects.model.ts
+│  │  │  ├─ projects.data.ts
+│  │  │  ├─ ProjectsSection.tsx
+│  │  │  └─ components/
+│  │  └─ experience/
+│  │     ├─ experience.model.ts
+│  │     ├─ experience.data.ts
+│  │     └─ ExperienceSection.tsx
+│  │
+│  ├─ data/                   # (초기 단계) 콘텐츠 데이터 모음
+│  │  ├─ profile.ts
+│  │  ├─ projects.ts
+│  │  ├─ experience.ts
+│  │  └─ skills.ts
+│  │
+│  ├─ styles/
+│  │  ├─ globals.css          # 전역 스타일
+│  │  ├─ tokens.css           # 디자인 토큰(색/폰트/간격)
+│  │  └─ original.css         # 템플릿 CSS 원본 유지(1차 이식용)
+│  │
+│  ├─ lib/                    # 유틸/헬퍼/공용 함수
+│  │  ├─ cn.ts                # className 유틸(선택)
+│  │  ├─ format.ts            # 날짜/숫자 포맷
+│  │  └─ constants.ts
+│  │
+│  ├─ hooks/
+│  │  ├─ useScrollSpy.ts      # 섹션 스크롤 기반 활성화(템플릿 탭 대체에 유용)
+│  │  └─ useMediaQuery.ts
+│  │
+│  ├─ assets/                 # 번들에 포함되는 이미지/아이콘
+│  │  └─ images/
+│  │
+│  ├─ main.tsx
+│  └─ vite-env.d.ts
+│
+├─ template/
+│  └─ main.html               # 원본 템플릿 기준점(아주 좋음)
+│
+├─ .editorconfig
+├─ .gitignore
+├─ index.html
+├─ eslint.config.js
+├─ tsconfig.json
+├─ tsconfig.app.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+├─ package.json
+└─ bun.lock
 ```
 
 - `components`: 레이아웃 공통 UI
