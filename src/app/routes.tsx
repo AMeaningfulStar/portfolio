@@ -2,6 +2,7 @@ import Shell from '@components/layout/Shell'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 import AboutPage from '@/pages/AboutPage'
+import ContactPage from '@/pages/ContactPage'
 import PortfolioPage from '@/pages/PortfolioPage'
 import NotFoundRedirect from '@pages/NotFoundRedirect'
 import TemplatePage from '@pages/TemplatePage'
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
       { path: '/resume', element: <TemplatePage page="resume" /> },
       { path: '/portfolio', element: <PortfolioPage /> },
       { path: '/blog', element: <TemplatePage page="blog" /> },
-      { path: '/contact', element: <TemplatePage page="contact" /> },
+      { path: '/contact', element: <ContactPage /> },
 
       { path: '*', element: <NotFoundRedirect /> },
     ],
