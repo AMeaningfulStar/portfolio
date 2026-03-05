@@ -1,6 +1,7 @@
 import Shell from '@components/layout/Shell'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
+import AboutPage from '@/pages/AboutPage'
 import NotFoundRedirect from '@pages/NotFoundRedirect'
 import TemplatePage from '@pages/TemplatePage'
 
@@ -10,7 +11,7 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <Navigate to="/about" replace /> },
 
-      { path: '/about', element: <TemplatePage page="about" /> },
+      { path: '/about', element: <AboutPage /> },
       { path: '/resume', element: <TemplatePage page="resume" /> },
       { path: '/portfolio', element: <TemplatePage page="portfolio" /> },
       { path: '/blog', element: <TemplatePage page="blog" /> },
