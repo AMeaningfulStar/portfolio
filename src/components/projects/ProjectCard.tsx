@@ -1,4 +1,5 @@
 import type { ProjectItem } from '@/data/projects'
+import { PROJECT_CATEGORY_LABELS } from '@/data/projects'
 
 type ProjectCardProps = {
   project: ProjectItem
@@ -22,7 +23,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <h3 className="project-title">{project.title}</h3>
         <p className="project-category">
-          {project.category.join(' · ')}
+          {project.category
+            .map((category) => PROJECT_CATEGORY_LABELS[category])
+            .join(' · ')}
         </p>
       </a>
     </li>

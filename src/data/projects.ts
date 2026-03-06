@@ -4,6 +4,8 @@ export type ProjectCategory =
  | 'team-project'
  | 'personal-project'
 
+ export type ProjectFilterCategory = 'all' | ProjectCategory
+
 export type ProjectItem = {
   id: string
   title: string
@@ -12,6 +14,24 @@ export type ProjectItem = {
   alt: string
   href?: string
 }
+
+export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, string> = {
+  'front-end': 'Front-end',
+  'full-stack': 'Full-stack',
+  'team-project': 'Team project',
+  'personal-project': 'Personal project',
+}
+
+export const PROJECT_FILTER_OPTIONS: Array<{
+  value: ProjectFilterCategory
+  label: string
+}> = [
+  { value: 'all', label: 'All' },
+  { value: 'front-end', label: 'Front-end' },
+  { value: 'full-stack', label: 'Full-stack' },
+  { value: 'team-project', label: 'Team project' },
+  { value: 'personal-project', label: 'Personal project' },
+]
 
 export const projects: ProjectItem[] = [
   {
