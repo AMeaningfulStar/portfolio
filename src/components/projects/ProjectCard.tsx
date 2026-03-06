@@ -14,18 +14,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <ion-icon name="eye-outline"></ion-icon>
           </div>
 
-          <img
-            src={project.image}
-            alt={project.alt}
-            loading="lazy"
-          />
+          <img src={project.image} alt={project.alt} loading="lazy" />
         </figure>
 
         <h3 className="project-title">{project.title}</h3>
         <p className="project-category">
-          {project.category
-            .map((category) => PROJECT_CATEGORY_LABELS[category])
-            .join(' · ')}
+          {project.category.map((category) => PROJECT_CATEGORY_LABELS[category]).join(' · ')}
         </p>
       </a>
     </li>

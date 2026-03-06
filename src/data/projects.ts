@@ -1,10 +1,6 @@
-export type ProjectCategory =
- | 'front-end'
- | 'full-stack'
- | 'team-project'
- | 'personal-project'
+export type ProjectCategory = 'front-end' | 'full-stack' | 'team-project' | 'personal-project'
 
- export type ProjectFilterCategory = 'all' | ProjectCategory
+export type ProjectFilterCategory = 'all' | ProjectCategory
 
 export type ProjectItem = {
   id: string

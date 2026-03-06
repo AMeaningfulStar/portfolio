@@ -6,10 +6,7 @@ type ProjectFilterProps = {
   onSelectCategory: (category: ProjectFilterCategory) => void
 }
 
-export default function ProjectFilter({
-  selectedCategory,
-  onSelectCategory,
-}: ProjectFilterProps) {
+export default function ProjectFilter({ selectedCategory, onSelectCategory }: ProjectFilterProps) {
   return (
     <ul className="filter-list">
       {PROJECT_FILTER_OPTIONS.map((option) => (

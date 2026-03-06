@@ -1,26 +1,20 @@
 import ProjectFilter from '@components/projects/ProjectFilter'
 import ProjectGrid from '@components/projects/ProjectGrid'
-import {
-  projects,
-  type ProjectFilterCategory,
-} from '@data/projects'
+import { projects, type ProjectFilterCategory } from '@data/projects'
 import { pageSections } from '@template/sections'
 import { useMemo, useState } from 'react'
 
 export default function PortfolioPage() {
   const section = pageSections.portfolio
 
-  const [selectedCategory, setSelectedCategory] =
-    useState<ProjectFilterCategory>('all')
+  const [selectedCategory, setSelectedCategory] = useState<ProjectFilterCategory>('all')
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'all') {
       return projects
     }
 
-    return projects.filter((project) =>
-      project.category.includes(selectedCategory)
-    )
+    return projects.filter((project) => project.category.includes(selectedCategory))
   }, [selectedCategory])
 
   const portfolioHtmlWithoutFilterAndList = section.innerHtml
@@ -35,10 +29,7 @@ export default function PortfolioPage() {
         }}
       />
 
-      <ProjectFilter
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-      />
+      <ProjectFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
 
       <ProjectGrid projects={filteredProjects} />
     </article>
