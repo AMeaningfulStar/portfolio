@@ -21,7 +21,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </figure>
 
         <h3 className="project-title">{project.title}</h3>
-        <p className="project-category">{project.category}</p>
+        <p className="project-category">
+          {project.category.join(' · ')}
+        </p>
       </a>
     </li>
   )
