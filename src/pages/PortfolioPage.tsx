@@ -1,12 +1,18 @@
+import ProjectGrid from '@components/projects/ProjectGrid'
 import { pageSections } from '@template/sections'
 
 export default function PortfolioPage() {
   const section = pageSections.portfolio
 
+  const portfolioHtmlWithoutList = section.innerHtml.replace(
+    /<ul class="project-list">[\s\S]*?<\/ul>/,
+    ''
+  )
+
   return (
     <article className={`${section.className} active`}>
-      {/* TODO(Step7): ProjectFilter / ProjectGrid를 React 컴포넌트로 분리 예정 */}
-      <div dangerouslySetInnerHTML={{ __html: section.innerHtml }} />
+      <div dangerouslySetInnerHTML={{ __html: portfolioHtmlWithoutList }} />
+      <ProjectGrid />
     </article>
   )
 }
