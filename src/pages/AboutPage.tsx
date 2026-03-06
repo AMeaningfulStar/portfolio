@@ -1,4 +1,7 @@
-import { profile } from '@data/profile'
+import AboutClients from '@/components/about/AboutClients'
+import AboutIntro from '@/components/about/AboutIntro'
+import AboutService from '@/components/about/AboutService'
+import AboutTestimonials from '@/components/about/AboutTestimonials'
 import { pageSections } from '@template/sections'
 
 export default function AboutPage() {
@@ -6,13 +9,14 @@ export default function AboutPage() {
 
   return (
     <article className={`${section.className} active`}>
-      {/* React로 얹는 얇은 섹션 */}
-      <header style={{ marginBottom: 16 }}>
-        <h1>{profile.name}</h1>
-        <p>{profile.tagline}</p>
+      <header>
+        <h2 className="h2 article-title">About me</h2>
       </header>
 
-      <div dangerouslySetInnerHTML={{ __html: section.innerHtml }} />
+      <AboutIntro />
+      <AboutService />
+      <AboutTestimonials />
+      <AboutClients />
     </article>
   )
 }
