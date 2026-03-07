@@ -7,7 +7,6 @@ import ContactPage from '@/pages/ContactPage'
 import PortfolioPage from '@/pages/PortfolioPage'
 import ResumePage from '@/pages/ResumePage'
 import NotFoundRedirect from '@pages/NotFoundRedirect'
-import TemplatePage from '@pages/TemplatePage'
 
 export const router = createBrowserRouter([
   {
