@@ -1,14 +1,7 @@
-type BlogItem = {
-  title: string
-  category: string
-  date: string
-  image: string
-  alt: string
-  href?: string
-}
+import type { BlogPost } from '@/data/blog'
 
 type Props = {
-  post: BlogItem
+  post: BlogPost
 }
 
 export default function BlogCard({ post }: Props) {
