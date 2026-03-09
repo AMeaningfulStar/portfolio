@@ -1,8 +1,4 @@
-type TimelineItem = {
-  title: string
-  period: string
-  description: string
-}
+import type { TimelineItem } from '@/data/resume'
 
 type Props = {
   title: string
@@ -17,12 +13,10 @@ export default function ResumeTimeline({ title, items }: Props) {
       </div>
 
       <ol className="timeline-list">
-        {items.map((item, index) => (
-          <li key={index} className="timeline-item">
+        {items.map((item) => (
+          <li key={item.id} className="timeline-item">
             <h4 className="h4 timeline-item-title">{item.title}</h4>
-
             <span>{item.period}</span>
-
             <p className="timeline-text">{item.description}</p>
           </li>
         ))}

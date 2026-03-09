@@ -1,10 +1,7 @@
-type Skill = {
-  name: string
-  level: number
-}
+import type { SkillItem } from '@/data/resume'
 
 type Props = {
-  skills: Skill[]
+  skills: SkillItem[]
 }
 
 export default function ResumeSkills({ skills }: Props) {
@@ -13,8 +10,8 @@ export default function ResumeSkills({ skills }: Props) {
       <h3 className="h3 skills-title">My skills</h3>
 
       <ul className="skills-list content-card">
-        {skills.map((skill, index) => (
-          <li key={index} className="skills-item">
+        {skills.map((skill) => (
+          <li key={skill.id} className="skills-item">
             <div className="title-wrapper">
               <h5 className="h5">{skill.name}</h5>
               <data value={skill.level}>{skill.level}%</data>
