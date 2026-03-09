@@ -1,92 +1,28 @@
+import { testimonials } from '@data/about'
+
 export default function AboutTestimonials() {
   return (
     <section className="testimonials">
       <h3 className="h3 testimonials-title">Testimonials</h3>
 
       <ul className="testimonials-list has-scrollbar">
-        <li className="testimonials-item">
-          <div className="content-card" data-testimonials-item>
-            <figure className="testimonials-avatar-box">
-              <img src="https://placehold.co/500x500" alt="Daniel lewis" width="60" data-testimonials-avatar />
-            </figure>
+        {testimonials.map((item) => (
+          <li className="testimonials-item" key={item.id}>
+            <div className="content-card" data-testimonials-item>
+              <figure className="testimonials-avatar-box">
+                <img src={item.avatar} alt={item.name} width="60" />
+              </figure>
 
-            <h4 className="h4 testimonials-item-title" data-testimonials-title>
-              Daniel lewis
-            </h4>
+              <h4 className="h4 testimonials-item-title" data-testimonials-title>
+                {item.name}
+              </h4>
 
-            <div className="testimonials-text" data-testimonials-text>
-              <p>
-                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot
-                of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous
-                cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels
-                alia.
-              </p>
+              <div className="testimonials-text">
+                <p>{item.text}</p>
+              </div>
             </div>
-          </div>
-        </li>
-
-        <li className="testimonials-item">
-          <div className="content-card" data-testimonials-item>
-            <figure className="testimonials-avatar-box">
-              <img src="https://placehold.co/500x500" alt="Jessica miller" width="60" data-testimonials-avatar />
-            </figure>
-
-            <h4 className="h4 testimonials-item-title" data-testimonials-title>
-              Jessica miller
-            </h4>
-
-            <div className="testimonials-text" data-testimonials-text>
-              <p>
-                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot
-                of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous
-                cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels
-                alia.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li className="testimonials-item">
-          <div className="content-card" data-testimonials-item>
-            <figure className="testimonials-avatar-box">
-              <img src="https://placehold.co/500x500" alt="Emily evans" width="60" data-testimonials-avatar />
-            </figure>
-
-            <h4 className="h4 testimonials-item-title" data-testimonials-title>
-              Emily evans
-            </h4>
-
-            <div className="testimonials-text" data-testimonials-text>
-              <p>
-                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot
-                of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous
-                cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels
-                alia.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li className="testimonials-item">
-          <div className="content-card" data-testimonials-item>
-            <figure className="testimonials-avatar-box">
-              <img src="https://placehold.co/500x500" alt="Henry william" width="60" data-testimonials-avatar />
-            </figure>
-
-            <h4 className="h4 testimonials-item-title" data-testimonials-title>
-              Henry william
-            </h4>
-
-            <div className="testimonials-text" data-testimonials-text>
-              <p>
-                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot
-                of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous
-                cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels
-                alia.
-              </p>
-            </div>
-          </div>
-        </li>
+          </li>
+        ))}
       </ul>
     </section>
   )
