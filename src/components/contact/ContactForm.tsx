@@ -1,3 +1,4 @@
+import { contactFormMeta } from '@/data/contact'
 import { useMemo, useState } from 'react'
 
 export default function ContactForm() {
@@ -21,31 +22,31 @@ export default function ContactForm() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Step 8 이후 실제 이메일 전송 또는 외부 폼 연동 가능
+
     console.log('contact form submit', form)
   }
 
   return (
     <section className="contact-form">
-      <h3 className="h3 form-title">Contact Form</h3>
+      <h3 className="h3 form-title">{contactFormMeta.title}</h3>
 
       <form className="form" data-form onSubmit={onSubmit}>
         <div className="input-wrapper">
           <input
-            type="text"
-            name="fullname"
+            type={contactFormMeta.fields.fullname.type}
+            name={contactFormMeta.fields.fullname.name}
             className="form-input"
-            placeholder="Full name"
+            placeholder={contactFormMeta.fields.fullname.placeholder}
             required
             value={form.fullname}
             onChange={onChange('fullname')}
           />
 
           <input
-            type="email"
-            name="email"
+            type={contactFormMeta.fields.email.type}
+            name={contactFormMeta.fields.email.name}
             className="form-input"
-            placeholder="Email address"
+            placeholder={contactFormMeta.fields.email.placeholder}
             required
             value={form.email}
             onChange={onChange('email')}
@@ -53,9 +54,9 @@ export default function ContactForm() {
         </div>
 
         <textarea
-          name="message"
+          name={contactFormMeta.fields.message.name}
           className="form-input"
-          placeholder="Your Message"
+          placeholder={contactFormMeta.fields.message.placeholder}
           required
           value={form.message}
           onChange={onChange('message')}
@@ -63,7 +64,7 @@ export default function ContactForm() {
 
         <button className="form-btn" type="submit" disabled={!isValid}>
           <ion-icon name="paper-plane"></ion-icon>
-          <span>Send Message</span>
+          <span>{contactFormMeta.submitText}</span>
         </button>
       </form>
     </section>
