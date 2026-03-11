@@ -1,5 +1,5 @@
 import Shell from '@components/layout/Shell'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
 import AboutPage from '@/pages/AboutPage'
 import BlogPage from '@/pages/BlogPage'
@@ -7,7 +7,7 @@ import ContactPage from '@/pages/ContactPage'
 import PortfolioPage from '@/pages/PortfolioPage'
 import ResumePage from '@/pages/ResumePage'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <Shell />,
