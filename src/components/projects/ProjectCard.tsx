@@ -21,6 +21,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="project-category">
           {project.category.map((category) => PROJECT_CATEGORY_LABELS[category]).join(' · ')}
         </p>
+        <p className="project-summary">{project.summary}</p>
       </a>
     </li>
   )

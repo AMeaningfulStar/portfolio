@@ -59,6 +59,7 @@
   --fs-8: 11px;
 
   /* font-weight */
+  --fw-200: 200;
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
@@ -1062,7 +1063,8 @@ main {
 }
 
 .project-title,
-.project-category {
+.project-category,
+.project-summary {
   margin-left: 10px;
 }
 
@@ -1078,6 +1080,12 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+.project-summary {
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-200);
 }
 
 /*-----------------------------------*\

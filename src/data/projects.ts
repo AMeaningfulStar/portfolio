@@ -8,6 +8,7 @@ export type ProjectItem = {
   category: ProjectCategory[]
   image: string
   alt: string
+  summary: string
   href?: string
 }
 
@@ -31,27 +32,30 @@ export const PROJECT_FILTER_OPTIONS: Array<{
 
 export const projects: ProjectItem[] = [
   {
-    id: 'finance-dashboard',
-    title: 'Finance Dashboard',
-    category: ['front-end', 'personal-project'],
+    id: 'dambi-real-estate-partner',
+    title: '담비_부동산파트너',
+    category: ['front-end', 'team-project'],
     image: 'https://placehold.co/600x400',
-    alt: 'Finance Dashboard 프로젝트 썸네일',
+    alt: '담비_부동산파트너 프로젝트 썸네일',
+    summary: 'Vue.js 기반 부동산 관리 시스템 유지보수 및 지도 기반 매물 등록 기능 개발',
     href: '#',
   },
   {
-    id: 'task-manager',
-    title: 'Task Manager',
+    id: 'cheongsinho',
+    title: '청신호',
     category: ['full-stack', 'personal-project'],
     image: 'https://placehold.co/600x400',
-    alt: 'Task Manager 프로젝트 썸네일',
+    alt: '청신호 프로젝트 썸네일',
+    summary: '임시',
     href: '#',
   },
   {
-    id: 'portfolio-site',
-    title: 'Portfolio Site',
+    id: 'pongdangpongdang',
+    title: '퐁당퐁당',
     category: ['full-stack', 'team-project'],
     image: 'https://placehold.co/600x400',
-    alt: 'Portfolio Site 프로젝트 썸네일',
+    alt: '퐁당퐁당 프로젝트 썸네일',
+    summary: '임시',
     href: '#',
   },
 ]
