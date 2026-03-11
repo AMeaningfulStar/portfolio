@@ -18,5 +18,4 @@ export default defineConfig({
       '@template': path.resolve(__dirname, './template'),
     },
   },
-  base: '/portfolio/',
 })
